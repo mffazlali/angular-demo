@@ -1,0 +1,3 @@
+<input type="file" (change)="onFileSelected($event)">
+    <button (click)="classify()">Classify</button>
+    <div *ngIf="prediction">{{prediction}}</div>

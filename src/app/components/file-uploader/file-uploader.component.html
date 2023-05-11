@@ -1,0 +1,19 @@
+<div
+  class="file-uploader"
+  (drop)="onFileDrop($event)"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+>
+  <p class="drop-text">
+    Drop files here or <span class="" (click)="browseFiles()">browse</span> to
+    upload.
+  </p>
+  <input
+    id="file-input"
+    type="file"
+    class="file-input"
+    (change)="onFileSelected($event)"
+  />
+  <button class="upload-button" (click)="uploadFile()">Upload</button>
+  <div class="file-info">{{ fileInfo }}</div>
+</div>

@@ -1,6 +1,23 @@
 .file-uploader {
-  width: 300px;
-  height: 200px;
+  padding: 2% 2%;
+  width: 96%;
+  border-radius: 10px;
+  background-color:darkgrey;
+
+}
+
+.file-uploader-container {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.file-uploader-select {
+  padding: 4% 0;
+  width: 100%;
   border: 2px dashed #ccc;
   border-radius: 4px;
   display: flex;
@@ -8,6 +25,16 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.file-uploader-content{
+  padding: 0;
+  width: 100%;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  max-height: 300px;
 }
 
 .drop-text {
@@ -25,7 +52,7 @@
   display: none;
 }
 
-.upload-button {
+.browse-button {
   margin-top: 10px;
 }
 

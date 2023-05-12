@@ -1,1 +1,7 @@
-<app-file-uploader></app-file-uploader>
+<form [formGroup]="formGroup">
+  <!-- file uploader component -->
+  <app-file-uploader formControlName="files"></app-file-uploader>
+
+  <!-- view child component -->
+  <app-view-child></app-view-child>
+</form>

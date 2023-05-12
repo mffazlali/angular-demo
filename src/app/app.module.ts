@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImageClassifierService } from './image-classifier.service';
 import { ImageClassifierModule } from './components/image-classifier/image-classifier.module';
 import { FileUploaderModule } from './components/file-uploader/file-uploader.module';
+import { ViewChildModule } from './components/view-child/view-child.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { FileUploaderModule } from './components/file-uploader/file-uploader.mod
     NgxColorsModule,
     ImageClassifierModule,
     FileUploaderModule,
+    ViewChildModule,
   ],
   providers: [ImageClassifierService],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
-import { from, groupBy, map, merge, mergeMap, toArray } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +7,15 @@ import { from, groupBy, map, merge, mergeMap, toArray } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  combinedResult: any[] = [];
-  ngOnInit(): void {
-    this.toLocalDateString();
-  }
+  formGroup!: FormGroup;
 
-  toLocalDateString() {
-    const date = new Date('2005-08-02');
-    const [year, month, day] = date
-      .toLocaleDateString('fa-IR-u-nu-latn', {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-      })
-      .split('/')
-      .map((x) => +x);
-    console.log(year, month, day);
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.formGroup = this.fb.group({
+      files: [FileList],
+    });
+
+    this.formGroup.get('files')?.valueChanges.subscribe(console.log);
   }
 }

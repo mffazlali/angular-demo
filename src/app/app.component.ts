@@ -18,4 +18,5 @@ export class AppComponent implements OnInit {
 
     this.formGroup.get('files')?.valueChanges.subscribe(console.log);
   }
+
 }

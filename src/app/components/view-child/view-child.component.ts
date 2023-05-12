@@ -1,4 +1,4 @@
-import { Component, ViewChild,OnInit,AfterViewInit } from '@angular/core';
+import { Component, ViewChild,OnInit,AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { ChildDirective } from 'src/app/directives/child.directive';
 
 @Component({
@@ -9,12 +9,17 @@ import { ChildDirective } from 'src/app/directives/child.directive';
 export class ViewChildComponent implements AfterViewInit  {
   value?: string;
   @ViewChild(ChildDirective) childDirective!:ChildDirective
+  @ViewChildren(ChildDirective) childDirectives!:QueryList<ChildDirective>
   set name(value: any) {
-    // this.value = value.name;
+    // this.value = value.color;
   }
 
   ngAfterViewInit(): void {
-    this.childDirective.name='ehsan'
+    // this.childDirective.color='blue'
+    this.childDirectives.changes.subscribe(values=>{
+      console.log(values)
+    })
+    console.log(this.childDirectives.map(item=>item.color).join(', '))
   }
 
 }

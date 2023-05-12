@@ -10,7 +10,7 @@ import { ChildDirective } from 'src/app/directives/child.directive';
   imports: [
     CommonModule,
   ],
-  exports:[ViewChildComponent],
+  exports:[ViewChildComponent,ChildDirective],
   providers:[]
 })
 export class ViewChildModule { }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImageClassifierService } from '../../image-classifier.service';
+import { ImageClassifierService } from 'src/app/services/image-classifier.service';
 
 @Component({
   selector: 'app-image-classifier',

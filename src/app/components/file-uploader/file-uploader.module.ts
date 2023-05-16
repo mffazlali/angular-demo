@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FileUploaderComponent } from './file-uploader.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [FileUploaderComponent],
-  imports: [    BrowserModule,
-    BrowserAnimationsModule,
+  imports: [
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-],
+  ],
   exports: [FileUploaderComponent],
 })
 export class FileUploaderModule {}

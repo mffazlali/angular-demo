@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ITreeNode } from './tree-node.interface';
 
 @Component({
   selector: 'app-tree-node',
@@ -9,7 +10,3 @@ export class TreeNodeComponent {
   @Input() node!: ITreeNode;
 }
 
-interface ITreeNode {
-  name: string;
-  children: ITreeNode;
-}

@@ -15,11 +15,19 @@
   </app-content-child>
 </form>
 
-<!-- image gallery -->
-<app-image-gallery></app-image-gallery>
-
 <!-- component-holder -->
 <app-component-holder></app-component-holder>
 
 <!-- ng template -->
 <app-ng-template></app-ng-template>
+
+<!-- tree node -->
+<app-tree-node [node]="node"></app-tree-node>
+
+<!-- ng model -->
+<app-ng-model [(myProp)]="myPropValue"></app-ng-model>
+<div>{{ myPropValue }}</div>
+
+<!-- image gallery -->
+<app-image-list-gallery [images]="images"></app-image-list-gallery>
+

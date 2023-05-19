@@ -1,4 +1,11 @@
-import { AfterContentInit, Component, ContentChild, ContentChildren, QueryList } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  Component,
+  ContentChild,
+  ContentChildren,
+  QueryList,
+} from '@angular/core';
 import { ChildDirective } from 'src/app/directives/child.directive';
 
 @Component({
@@ -6,12 +13,20 @@ import { ChildDirective } from 'src/app/directives/child.directive';
   templateUrl: './content-child.component.html',
   styleUrls: ['./content-child.component.scss'],
 })
-export class ContentChildComponent implements AfterContentInit {
+export class ContentChildComponent
+  implements AfterContentInit, AfterContentChecked
+{
   @ContentChild(ChildDirective) childDirective!: ChildDirective;
   @ContentChildren(ChildDirective) childDirectives!: QueryList<ChildDirective>;
   @ContentChild('contentChild') content!: any;
 
   ngAfterContentInit() {
+    console.log('childDirective', this.childDirective);
+    console.log('childDirectives', this.childDirectives);
+    console.log('contentChild', this.content);
+  }
+
+  ngAfterContentChecked() {
     console.log('childDirective', this.childDirective);
     console.log('childDirectives', this.childDirectives);
     console.log('contentChild', this.content);

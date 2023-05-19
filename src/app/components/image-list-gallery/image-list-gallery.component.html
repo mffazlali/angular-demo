@@ -1,0 +1,16 @@
+<div class="image-list-gallery">
+  <div class="image-list-gallery-container">
+    <div class="image-list-gallery-wrapper" #imageWrapper>
+        <ng-container *ngFor="let image of images">
+          <div #imageResponsive appHideElement [wrapperElement]="imageWrapper">
+        <div
+          class="image-list-gallery-responsive"
+          [style]="{ backgroundImage: 'url(' + image + ')' }"
+        ></div>
+        </div>
+      </ng-container>
+    </div>
+    <div (click)="nextImage()" class="image-list-gallery-next"><</div>
+    <div (click)="prevImage()" class="image-list-gallery-pre">></div>
+  </div>
+</div>

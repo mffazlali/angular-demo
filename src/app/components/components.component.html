@@ -1,33 +1,49 @@
-<form [formGroup]="formGroup">
-  <!-- file uploader component -->
-  <app-file-uploader formControlName="files"></app-file-uploader>
+<div class="bg-gradient-to-b from-amber-100 to-transparent">
+    <div
+        class="row mx-auto content-center items-center"
+    >
+        <div class="col">
+            <form [formGroup]="formGroup">
+                <!-- file uploader component -->
+                <app-file-uploader formControlName="files"></app-file-uploader>
 
-  <!-- view child component -->
-  <app-view-child></app-view-child>
+                <!-- view child component -->
+                <app-view-child></app-view-child>
 
-  <!-- content child component -->
-  <app-content-child>
-    <div>
-      <span #contentChild>contentChild</span>
+                <!-- content child component -->
+                <app-content-child>
+                    <div>
+                        <span #contentChild>contentChild</span>
+                    </div>
+                    <appChild color="black"></appChild>
+                    <appChild color="brown"></appChild>
+                </app-content-child>
+            </form>
+        </div>
+        <div class="col">
+            <!-- component-holder -->
+            <app-component-holder></app-component-holder>
+        </div>
+        <div class="col">
+            <!-- ng template -->
+            <app-ng-template></app-ng-template>
+        </div>
+        <div class="col">
+            <!-- tree node -->
+            <app-tree-node [node]="node"></app-tree-node>
+        </div>
+        <div class="col">
+            <!-- ng model -->
+            <app-ng-model [(myProp)]="myPropValue"></app-ng-model>
+            <div>{{ myPropValue }}</div>
+        </div>
+        <div class="col">
+            <!-- image gallery -->
+            <app-image-list-gallery [images]="images"></app-image-list-gallery>
+        </div>
+        <div class="col">
+            <!-- signals -->
+            <app-signals></app-signals>
+        </div>
     </div>
-    <appChild color="black"></appChild>
-    <appChild color="brown"></appChild>
-  </app-content-child>
-</form>
-
-<!-- component-holder -->
-<app-component-holder></app-component-holder>
-
-<!-- ng template -->
-<app-ng-template></app-ng-template>
-
-<!-- tree node -->
-<app-tree-node [node]="node"></app-tree-node>
-
-<!-- ng model -->
-<app-ng-model [(myProp)]="myPropValue"></app-ng-model>
-<div>{{ myPropValue }}</div>
-
-<!-- image gallery -->
-<app-image-list-gallery [images]="images"></app-image-list-gallery>
-
+</div>

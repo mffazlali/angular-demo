@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "angular16-test": {
+        "angular-demo": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/angular16-test",
+                        "outputPath": "dist/angular-demo",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -61,11 +61,12 @@
                   },
 
                     "configurations": {
+                        
                         "production": {
-                            "browserTarget": "angular16-test:build:production"
+                            "browserTarget": "angular-demo:build:production"
                         },
                         "development": {
-                            "browserTarget": "angular16-test:build:development",
+                            "browserTarget": "angular-demo:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -73,7 +74,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "angular16-test:build"
+                        "browserTarget": "angular-demo:build"
                     }
                 },
                 "test": {

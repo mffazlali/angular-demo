@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ITreeNode } from './tree-node/tree-node.interface';
+import { readProperty } from '../utils/readProperty.util';
 
 @Component({
   selector: 'app-components',
@@ -53,5 +54,17 @@ export class ComponentsComponent implements OnInit {
     });
 
     this.formGroup.get('files')?.valueChanges.subscribe(console.log);
+
+    const obj = {
+      a: {
+        b: {
+          c: 'Hello World'
+        }
+      }
+    };
+    
+    const value = readProperty(obj, 'a.b.c');
+    console.log(value); // Output: Hello World
+  
   }
 }

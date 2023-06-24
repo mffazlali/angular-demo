@@ -14,6 +14,9 @@ import { CommonModule } from '@angular/common'
 import { TreeNodeModule } from './tree-node/tree-node.module'
 import { NgModelModule } from './ng-model/ng-model.module'
 import { SignalsModule } from './signals/signals.module'
+import { HttpClientModule } from '@angular/common/http'
+import { CoinpaprikaService } from '../services/coinpaprika.service'
+import { StringTemplateComponent } from './string-template/string-template.component'
 
 const routes: Routes = [
     {
@@ -42,9 +45,11 @@ const components = [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule,
         components,
+        StringTemplateComponent
     ],
     exports: [RouterModule],
-    providers: [ImageClassifierService],
+    providers: [ImageClassifierService,CoinpaprikaService],
 })
 export class ComponentsModule {}

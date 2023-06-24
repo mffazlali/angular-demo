@@ -1,4 +1,12 @@
-import { Component, signal, OnInit } from '@angular/core'
+import {
+    Component,
+    signal,
+    OnInit,
+    Input,
+    WritableSignal,
+    computed,
+    effect,
+} from '@angular/core'
 
 @Component({
     selector: 'app-signals',
@@ -6,11 +14,23 @@ import { Component, signal, OnInit } from '@angular/core'
     styleUrls: ['./signals.component.scss'],
 })
 export class SignalsComponent implements OnInit {
-    count = signal(0)
+    // make inputs as mandatory
+    @Input({ alias: 'dValue', required: true }) defaultValue: number = 0
 
-    constructor() {}
+    count!: WritableSignal<number>
 
-    ngOnInit() {}
+    doubleCount = computed(() => this.count() * 2)
+
+    constructor() {
+        // effect(() => {
+        //     console.log(`current count value: ${this.count}`)
+        // })
+    
+    }
+
+    ngOnInit() {
+        this.count = signal(this.defaultValue)
+    }
 
     increment() {
         this.count.update((c) => c + 1)
